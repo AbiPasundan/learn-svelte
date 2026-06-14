@@ -1,13 +1,14 @@
 <script lang="ts">
   console.log("hello svelte")
+  const name = "svelte"
 </script>
-
-<p>
-  Hello World
-</p>
 
 <style>
     p {
         color: red;
     }
 </style>
+
+<p>
+  Hello {name}
+</p>
