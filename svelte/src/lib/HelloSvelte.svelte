@@ -1,17 +1,19 @@
 <script lang="ts">
-  console.log("hello svelte")
-  const name = "svelte"
-  const src = "https://avatars.githubusercontent.com/u/125271650?v=4"
+  import Logo from "./Logo.svelte";
+
+  console.log("hello svelte");
+  const name = "svelte";
 </script>
 
 <style>
-    p {
-        color: red;
-    }
+  p {
+    color: red;
+  }
 </style>
+
 
 <p>
   Hello {name}
 </p>
 
-<img {src} alt="name">
+<Logo />
