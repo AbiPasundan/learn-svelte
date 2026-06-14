@@ -3,6 +3,7 @@
 
   console.log("hello svelte");
   const name = "svelte";
+  const content = "<p>Hello World</p>"
 </script>
 
 <style>
@@ -15,5 +16,7 @@
 <p>
   Hello {name}
 </p>
+
+{@html content}
 
 <Logo />
