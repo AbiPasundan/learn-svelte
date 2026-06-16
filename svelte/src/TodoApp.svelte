@@ -1,7 +1,7 @@
 <script>
     import Todo from "./lib/Todo.svelte";
 
-    const todos = [
+    const todos = $state([
         {
             id: 1,
             name: "name",
@@ -17,11 +17,17 @@
             name: "nameles",
             done: false,
         },
-    ];
+    ])
+
+    function remove() {
+        todos.shift();
+    }
 </script>
 
+<button onclick={remove}>Remove</button>
+
 <ul>
-    {#each todos as todos}
-        <li><Todo {...todos} /></li>
+    {#each todos as todo (todo.id)}
+        <li><Todo {...todo } /></li>
     {/each}
 </ul>
