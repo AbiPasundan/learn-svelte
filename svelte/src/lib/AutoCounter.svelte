@@ -7,9 +7,10 @@
   }
 
   $effect(() => {
-    setInterval(() => {
+    const id = setInterval(() => {
        counter++ 
     }, interval);
+    return () => clearInterval(id)
   })
 
 </script>
