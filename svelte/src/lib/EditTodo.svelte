@@ -1,14 +1,14 @@
 <script lang="ts">
     type Props = {
-        id: string;
+        id: number;
         name: string;
-        onedit: (id: string, name: string) => void;
+        onedit: (id: number, name: string) => void;
     };
 
     const { id, name, onedit }: Props = $props();
 
     function save() {
-        const input = document.getElementById(id);
+        const input = document.getElementById(String(id));
         if (input instanceof HTMLInputElement) {
             onedit(id, input.value);
         }
@@ -16,5 +16,5 @@
 </script>
 
 {id}
-<input type="text" {id} value={name} />
+<input type="text" id={String(id)} value={name} />
 <button onclick={save}>Save</button>
