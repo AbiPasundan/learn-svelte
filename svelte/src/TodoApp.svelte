@@ -8,21 +8,14 @@
         edit: boolean;
     };
 
-    let todos = $state<Todo[]>([
-        {
-            id: 1,
-            name: "1",
-            edit: false,
-        },
-    ]);
-
-    let id = 0;
+    let todos = $state<Todo[]>([]);
+    let name = $state("");
+    let id: number = 1;
 
     function add(e: SubmitEvent) {
         e.preventDefault();
-        const input = document.getElementById("todo") as HTMLInputElement;
-        todos.push({ id: id++, name: input.value, edit: false });
-        input.value = "";
+        todos.push({ id: id++, name: name, edit: false });
+        name = "";
     }
 
     function remove(id: number) {
@@ -46,15 +39,11 @@
 </script>
 
 <form onsubmit={add}>
-    <input type="text" id="todo" />
-    <button type="submit"> Add </button>
+    <input type="text" id="todo" bind:value={name} />
+    <button type="submit">Add</button>
 </form>
 
 <ul>
-    <!-- {#each todos as todo (todo.id)}
-        <li><Todo {...todo} /></li>
-        <button onclick={() => remove(todo.id)}>Remove</button>
-    {/each} -->
     {#each todos as todo (todo.id)}
         <li>
             {#if todo.edit}
