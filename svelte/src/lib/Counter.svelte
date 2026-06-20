@@ -18,6 +18,6 @@
   })
 </script>
 
-<h1>counter : {count.join(" + ")} = {total}</h1>
+<h1 style:color="red" >counter : {count.join(" + ")} = {total}</h1>
 
 <button onclick={increment}>add</button>
