@@ -56,3 +56,25 @@
         </li>
     {/each}
 </ul>
+
+<style>
+    :global {
+        button {
+            background-color: B4CAFSE;
+            border: none;
+            color: white;
+            padding: 18px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: lépx;
+            margin: 4px Zpx;
+            cursor: pointer;
+            border-radius: Spx;
+            transition: backgroumd-color 8.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    }
+</style>
