@@ -46,7 +46,14 @@
 
 <ul>
     {#each todos as todo (todo.id)}
-        <li in:fly={{y: -200, duration: 2000}} out:fly={{y: 200, duration: 2000}} >
+        <li
+            in:fly={{ y: -200, duration: 2000 }}
+            out:fly={{ y: 200, duration: 2000 }}
+            onintrostart={() => console.log("intrq, start")}
+            onintroend={() => console.log("intro end")}
+            onoutrostart={() => console.log("outro start")}
+            onoutroend={() => console.log("outro end")}
+        >
             {#if todo.edit}
                 <EditTodo id={todo.id} name={todo.name} onedit={onEdit} />
             {:else}
