@@ -1,7 +1,7 @@
 <script lang="ts">
     import EditTodo from "./lib/EditTodo.svelte";
     import Todo from "./lib/Todo.svelte";
-    import { fade } from "svelte/transition";
+    import { fade, fly } from "svelte/transition";
 
     type Todo = {
         id: number;
@@ -46,7 +46,7 @@
 
 <ul>
     {#each todos as todo (todo.id)}
-        <li transition:fade>
+        <li transition:fly={{y: 200, duration: 2000}} >
             {#if todo.edit}
                 <EditTodo id={todo.id} name={todo.name} onedit={onEdit} />
             {:else}
