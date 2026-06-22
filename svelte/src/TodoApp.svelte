@@ -1,6 +1,7 @@
 <script lang="ts">
     import EditTodo from "./lib/EditTodo.svelte";
     import Todo from "./lib/Todo.svelte";
+    import { fade } from "svelte/transition";
 
     type Todo = {
         id: number;
@@ -45,7 +46,7 @@
 
 <ul>
     {#each todos as todo (todo.id)}
-        <li>
+        <li transition:fade>
             {#if todo.edit}
                 <EditTodo id={todo.id} name={todo.name} onedit={onEdit} />
             {:else}
