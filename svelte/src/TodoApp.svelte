@@ -46,7 +46,7 @@
 
 <ul>
     {#each todos as todo (todo.id)}
-        <li transition:fly={{y: 200, duration: 2000}} >
+        <li in:fly={{y: -200, duration: 2000}} out:fly={{y: 200, duration: 2000}} >
             {#if todo.edit}
                 <EditTodo id={todo.id} name={todo.name} onedit={onEdit} />
             {:else}
